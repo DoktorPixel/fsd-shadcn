@@ -8,7 +8,7 @@ export const ToDoList = () => {
   return (
     <ul className="space-y-2">
       {tasks.map((task) => (
-        <li key={task.id} className="flex items-center gap-2 p-2 border rounded">
+        <li key={task.id} className="flex items-center gap-2 p-2 border rounded bg-card">
           <ToggleTask task={task} />
           <span className={`flex-1 ${task.completed ? "line-through" : ""}`}>
             {task.title}
