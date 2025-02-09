@@ -1,4 +1,4 @@
-import { useTaskStore } from "@/shared/lib/zustand";
+import { useTodo } from "@/entities/todo";
 import { Button } from "@/shared/components/ui/button";
 import { Trash2 } from "lucide-react";
 
@@ -7,7 +7,7 @@ interface DeleteTaskProps {
 }
 
 export const DeleteTask = ({ taskId }: DeleteTaskProps) => {
-  const deleteTask = useTaskStore((state) => state.deleteTask);
+  const deleteTask = useTodo((state) => state.deleteTask);
 
   return (
     <Button variant="destructive" size="icon" onClick={() => deleteTask(taskId)}>

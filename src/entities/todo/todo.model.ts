@@ -8,7 +8,7 @@ interface TaskStore {
   deleteTask: (id: string) => void;
 }
 
-export const useTaskStore = create<TaskStore>((set) => ({
+export const useTodo = create<TaskStore>((set) => ({
   tasks: [],
   addTask: (title) =>
     set((state) => ({

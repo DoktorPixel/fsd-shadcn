@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import { ToDoPage } from "@/pages/to-do.tsx";
+import { HomePage } from "@/pages/home-page";
 
 export const AppRoutes = () => (
   <Routes>
-    <Route path="/" element={<ToDoPage />} />
+    <Route path="/" element={<HomePage />} />
   </Routes>
 );

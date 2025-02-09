@@ -1,11 +1,11 @@
-import { useTaskStore } from "@/shared/lib/zustand";
+import { useTodo } from "@/entities/todo";
 import { useState } from "react";
 import { Button } from "@/shared/components/ui/button";
 import { Input } from "@/shared/components/ui/input";
 
 export const AddTask = () => {
   const [title, setTitle] = useState("");
-  const addTask = useTaskStore((state) => state.addTask);
+  const addTask = useTodo((state) => state.addTask);
 
   const handleSubmit = () => {
     if (!title.trim()) return;

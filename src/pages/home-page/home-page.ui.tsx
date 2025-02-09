@@ -1,11 +1,14 @@
-import { useTaskStore } from "@/shared/lib/zustand";
+import { AddTask } from "@/features/todo";
+import { useTodo } from "@/entities/todo";
 import { ToggleTask } from "@/features/toggle-task";
-import { DeleteTask } from "@/features/delete-task";
+import { DeleteTask } from "@/features/todo";
 
-export const ToDoList = () => {
-  const { tasks } = useTaskStore();
-
+export const HomePage = () => {
+    const { tasks } = useTodo();
   return (
+    <div className="container mx-auto p-4 w-1/3 bg">
+      <h1 className="text-2xl font-bold mb-4">To-Do List</h1>
+      <AddTask />
     <ul className="space-y-2">
       {tasks.map((task) => (
         <li key={task.id} className="flex items-center gap-2 p-2 border rounded bg-card">
@@ -17,5 +20,6 @@ export const ToDoList = () => {
         </li>
       ))}
     </ul>
+    </div>
   );
 };
